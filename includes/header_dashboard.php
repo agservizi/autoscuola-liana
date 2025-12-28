@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href="<?php echo SITE_URL; ?>/">
     <title><?php echo SITE_NAME; ?> - <?php echo $page_title ?? 'Dashboard'; ?></title>
+    <link rel="icon" href="favicon.png" type="image/png">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="../assets/css/fontawesome.min.css">
     <!-- Bootstrap Icons -->

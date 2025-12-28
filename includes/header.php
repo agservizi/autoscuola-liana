@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href="<?php echo SITE_URL; ?>/">
-    <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+    <link rel="icon" href="favicon.png" type="image/png">
 
     <!-- SEO Meta Tags -->
     <title><?php echo $page_title ?? 'Autoscuola Liana - Scuola Guida Castellammare di Stabia | Patente di Guida'; ?></title>
