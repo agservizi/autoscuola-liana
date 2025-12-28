@@ -91,7 +91,7 @@ $stmt = $db->query("SELECT n.*, COUNT(nc.id) as campaigns_count FROM newsletters
 $newsletters = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 // Statistiche
-$totalSubscribers = $db->query("SELECT COUNT(*) FROM newsletter_subscribers WHERE status = 'active'")->fetchColumn();
+$totalSubscribers = $db->query("SELECT COUNT(*) FROM newsletter_subscribers WHERE is_active = TRUE")->fetchColumn();
 $totalNewsletters = $db->query("SELECT COUNT(*) FROM newsletters")->fetchColumn();
 $totalCampaigns = $db->query("SELECT COUNT(*) FROM newsletter_campaigns WHERE status = 'sent'")->fetchColumn();
 

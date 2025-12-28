@@ -1,7 +1,7 @@
 -- Migration: Add newsletter system tables
 -- Date: 2025-12-28
 
-USE autoscuola_liana;
+USE u393875765_autoscuola;
 
 -- Newsletter subscribers table
 CREATE TABLE newsletter_subscribers (
