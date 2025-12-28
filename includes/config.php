@@ -37,8 +37,13 @@ define('DB_PASS', getenv('DB_PASS') ?: '');
 
 // Site configuration
 define('SITE_NAME', 'Autoscuola Liana');
-define('SITE_URL', 'http://localhost:8000');
-define('ADMIN_EMAIL', 'info@autoscuolaliana.it');
+$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+$domain = $_SERVER['HTTP_HOST'];
+$path = dirname($_SERVER['SCRIPT_NAME']);
+if ($path != '/' && $path != '\\') {
+    $path = rtrim($path, '/');
+}
+define('SITE_URL', $protocol . $domain . $path);
 
 // Email configuration (Resend)
 define('RESEND_API_KEY', getenv('RESEND_API_KEY') ?: '');
