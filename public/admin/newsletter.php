@@ -1,5 +1,4 @@
 <?php
-session_start();
 require_once '../../includes/auth.php';
 require_once '../../includes/db.php';
 require_once '../../includes/config.php';
@@ -22,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $newsletterId = (int)$_POST['newsletter_id'];
 
                     // Elimina il newsletter
-                    $stmt = $pdo->prepare("DELETE FROM newsletters WHERE id = ?");
+                    $stmt = $db->prepare("DELETE FROM newsletters WHERE id = ?");
                     if ($stmt->execute([$newsletterId])) {
                         $message = 'Newsletter eliminata con successo.';
                         $messageType = 'success';
@@ -38,13 +37,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $newsletterId = (int)$_POST['newsletter_id'];
 
                     // Ottieni i dettagli del newsletter
-                    $stmt = $pdo->prepare("SELECT * FROM newsletters WHERE id = ?");
+                    $stmt = $db->prepare("SELECT * FROM newsletters WHERE id = ?");
                     $stmt->execute([$newsletterId]);
                     $newsletter = $stmt->fetch(PDO::FETCH_ASSOC);
 
                     if ($newsletter) {
                         // Ottieni tutti i sottoscrittori attivi
-                        $stmt = $pdo->prepare("SELECT email FROM newsletter_subscribers WHERE is_active = 1");
+                        $stmt = $db->prepare("SELECT email FROM newsletter_subscribers WHERE is_active = 1");
                         $stmt->execute();
                         $subscribers = $stmt->fetchAll(PDO::FETCH_COLUMN);
 
@@ -65,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             }
 
                             // Crea una campagna
-                            $stmt = $pdo->prepare("INSERT INTO newsletter_campaigns (newsletter_id, sent_at, recipient_count, status) VALUES (?, NOW(), ?, ?)");
+                            $stmt = $db->prepare("INSERT INTO newsletter_campaigns (newsletter_id, sent_at, recipient_count, status) VALUES (?, NOW(), ?, ?)");
                             $stmt->execute([$newsletterId, count($subscribers), 'sent']);
 
                             $message = "Newsletter inviata con successo a $sentCount destinatari.";
@@ -88,13 +87,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 // Ottieni tutti i newsletter
-$stmt = $pdo->query("SELECT n.*, COUNT(nc.id) as campaigns_count FROM newsletters n LEFT JOIN newsletter_campaigns nc ON n.id = nc.newsletter_id GROUP BY n.id ORDER BY n.created_at DESC");
+$stmt = $db->query("SELECT n.*, COUNT(nc.id) as campaigns_count FROM newsletters n LEFT JOIN newsletter_campaigns nc ON n.id = nc.newsletter_id GROUP BY n.id ORDER BY n.created_at DESC");
 $newsletters = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 // Statistiche
-$totalSubscribers = $pdo->query("SELECT COUNT(*) FROM newsletter_subscribers WHERE status = 'active'")->fetchColumn();
-$totalNewsletters = $pdo->query("SELECT COUNT(*) FROM newsletters")->fetchColumn();
-$totalCampaigns = $pdo->query("SELECT COUNT(*) FROM newsletter_campaigns WHERE status = 'sent'")->fetchColumn();
+$totalSubscribers = $db->query("SELECT COUNT(*) FROM newsletter_subscribers WHERE status = 'active'")->fetchColumn();
+$totalNewsletters = $db->query("SELECT COUNT(*) FROM newsletters")->fetchColumn();
+$totalCampaigns = $db->query("SELECT COUNT(*) FROM newsletter_campaigns WHERE status = 'sent'")->fetchColumn();
 
 $pageTitle = 'Gestione Newsletter';
 include '../includes/header_dashboard.php';
@@ -173,7 +172,7 @@ include '../includes/header_dashboard.php';
                 <div class="col-lg-3 col-6">
                     <div class="small-box bg-danger">
                         <div class="inner">
-                            <h3><?php echo $pdo->query("SELECT COUNT(*) FROM newsletter_subscribers WHERE status = 'unsubscribed'")->fetchColumn(); ?></h3>
+                            <h3><?php echo $db->query("SELECT COUNT(*) FROM newsletter_subscribers WHERE status = 'unsubscribed'")->fetchColumn(); ?></h3>
                             <p>Disiscritti</p>
                         </div>
                         <div class="icon">

@@ -51,12 +51,11 @@ define('RESEND_FROM_EMAIL', getenv('RESEND_FROM_EMAIL') ?: 'noreply@autoscuolali
 define('RESEND_FROM_NAME', getenv('RESEND_FROM_NAME') ?: 'Autoscuola Liana');
 
 // Session configuration
-ini_set('session.cookie_httponly', 1);
-ini_set('session.use_only_cookies', 1);
-ini_set('session.cookie_secure', 0); // Set to 1 for HTTPS
-
 // Start session if not already started
 if (session_status() == PHP_SESSION_NONE) {
+    ini_set('session.cookie_httponly', 1);
+    ini_set('session.use_only_cookies', 1);
+    ini_set('session.cookie_secure', 0); // Set to 1 for HTTPS
     session_start();
 }
 
