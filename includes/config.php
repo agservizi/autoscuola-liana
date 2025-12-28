@@ -43,7 +43,8 @@ $path = dirname($_SERVER['SCRIPT_NAME']);
 if ($path != '/' && $path != '\\') {
     $path = rtrim($path, '/');
 }
-define('SITE_URL', $protocol . $domain . $path);
+$calculated_url = $protocol . $domain . $path;
+define('SITE_URL', getenv('SITE_URL') ?: $calculated_url);
 
 // Email configuration (Resend)
 define('RESEND_API_KEY', getenv('RESEND_API_KEY') ?: '');
