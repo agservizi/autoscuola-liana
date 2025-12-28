@@ -529,5 +529,69 @@
         });
     });
     </script>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="btn btn-primary back-to-top" style="display: none;">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <style>
+    .back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 9999;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: none;
+        background: linear-gradient(45deg, #28a745, #20c997);
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    .back-to-top.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .back-to-top:hover {
+        background: linear-gradient(45deg, #218838, #17a2b8);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    }
+
+    .back-to-top:active {
+        transform: translateY(0);
+    }
+    </style>
+
+    <script>
+    // Back to Top Button
+    const backToTopBtn = document.getElementById('back-to-top');
+
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+            backToTopBtn.style.display = 'block';
+            setTimeout(() => backToTopBtn.classList.add('show'), 10);
+        } else {
+            backToTopBtn.classList.remove('show');
+            setTimeout(() => backToTopBtn.style.display = 'none', 300);
+        }
+    });
+
+    backToTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+    </script>
+
 </body>
 </html>
