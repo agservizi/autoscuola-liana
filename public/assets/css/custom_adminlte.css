@@ -1,0 +1,40 @@
+/* Minimal custom styles for Autoscuola Liana - AdminLTE Integration */
+
+/* Sticky sidebar and navbar */
+.layout-fixed .main-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 1030;
+}
+
+.layout-navbar-fixed .main-header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1035;
+}
+
+/* Fix sidebar z-index when expanded on hover */
+.layout-fixed .main-sidebar:hover {
+    z-index: 1040;
+}
+
+.layout-fixed.sidebar-collapse .main-sidebar:hover .sidebar {
+    z-index: 1040;
+}
+
+.layout-fixed.layout-navbar-fixed .content-wrapper {
+    margin-top: 3.5rem; /* Adjust based on navbar height */
+    min-height: calc(100vh - 3.5rem);
+}
+
+.layout-fixed .main-sidebar.sidebar-collapse .sidebar {
+    overflow-y: auto;
+}
+
+/* Brand colors for logo */
+.brand-link span {
+/* Any essential overrides can go here */

@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# Block access to admin areas
+Disallow: /admin/
+Disallow: /api/
+Disallow: /includes/
+Disallow: /partials/
+Disallow: /templates/
+Disallow: /student/
+Disallow: /login.php
+Disallow: /logout.php
+
+# Allow access to CSS, JS, and images
+Allow: /assets/
+Allow: /webfonts/
+
+# Sitemap
+Sitemap: https://www.autoscuolaliana.it/sitemap.xml
+
+# Crawl delay
+Crawl-delay: 1

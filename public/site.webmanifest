@@ -1,0 +1,42 @@
+{
+    "name": "Autoscuola Liana - Scuola Guida Castellammare di Stabia",
+    "short_name": "Autoscuola Liana",
+    "description": "Autoscuola Liana offre corsi per patente di guida B, A e superiori a Castellammare di Stabia",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#28a745",
+    "orientation": "portrait-primary",
+    "scope": "/",
+    "lang": "it-IT",
+    "categories": ["education", "business"],
+    "icons": [
+        {
+            "src": "/assets/img/favicon-16x16.png",
+            "sizes": "16x16",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/img/favicon-32x32.png",
+            "sizes": "32x32",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/img/apple-touch-icon.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/img/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/assets/img/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}

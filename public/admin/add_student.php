@@ -1,0 +1,193 @@
+<?php
+$page_title = 'Aggiungi Studente';
+require_once '../../includes/config.php';
+require_once '../../includes/auth.php';
+require_once '../../includes/db.php';
+
+requireAdmin();
+
+$current_page = basename(__FILE__);
+
+$message = '';
+$message_type = '';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_student'])) {
+    if (!validateCSRFToken($_POST['csrf_token'] ?? '')) {
+        $message = 'Token di sicurezza non valido.';
+        $message_type = 'error';
+    } else {
+        $firstname = sanitize($_POST['firstname'] ?? '');
+        $lastname = sanitize($_POST['lastname'] ?? '');
+        $email = sanitize($_POST['email'] ?? '');
+        $phone = sanitize($_POST['phone'] ?? '');
+        $password = $_POST['password'] ?? '';
+
+        if ($firstname && $lastname && $email && $phone && $password) {
+            // Check if email already exists
+            $stmt = $db->prepare("SELECT id FROM users WHERE email = ?");
+            $stmt->execute([$email]);
+            if ($stmt->rowCount() === 0) {
+                $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+                $stmt = $db->prepare("INSERT INTO users (email, password, first_name, last_name, phone, role) VALUES (?, ?, ?, ?, ?, 'student')");
+                if ($stmt->execute([$email, $hashed_password, $firstname, $lastname, $phone])) {
+                    $message = 'Studente registrato con successo!';
+                    $message_type = 'success';
+                } else {
+                    $message = 'Errore nella registrazione dello studente.';
+                    $message_type = 'error';
+                }
+            } else {
+                $message = 'Email già in uso.';
+                $message_type = 'warning';
+            }
+        } else {
+            $message = 'Tutti i campi sono obbligatori.';
+            $message_type = 'warning';
+        }
+    }
+}
+
+require_once '../../includes/header_dashboard.php';
+?>
+
+<div class="wrapper">
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+        <!-- Left navbar links -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="dashboard.php" class="nav-link">Home</a>
+            </li>
+        </ul>
+
+        <!-- Right navbar links -->
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <span class="nav-link">Benvenuto, <?php echo htmlspecialchars($_SESSION['first_name']); ?>!</span>
+            </li>
+            <li class="nav-item">
+                <a href="../logout.php" class="nav-link">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Sidebar -->
+    <?php include '../../includes/sidebar_admin.php'; ?>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                <h1 class="m-0">Aggiungi Studente</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
+                    <li class="breadcrumb-item"><a href="students.php">Studenti</a></li>
+                    <li class="breadcrumb-item active">Aggiungi</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+
+        <!-- Alert Messages -->
+        <?php if ($message): ?>
+        <div class="toast-container position-fixed top-0 end-0 p-3">
+            <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <i class="fas fa-<?php echo $message_type === 'success' ? 'check-circle' : 'exclamation-triangle'; ?> me-2"></i>
+                    <strong class="me-auto">Notifica</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+                </div>
+                <div class="toast-body">
+                    <?php echo $message; ?>
+                </div>
+            </div>
+        </div>
+        <?php endif; ?>
+
+        <!-- Add Student Form -->
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title"><i class="fas fa-user-plus"></i> Registra Nuovo Studente</h3>
+                <div class="card-tools">
+                    <a href="students.php" class="btn btn-outline-secondary btn-sm">
+                        <i class="fas fa-arrow-left"></i> Torna alla Lista
+                    </a>
+                </div>
+            </div>
+            <div class="card-body">
+                <form method="post" class="row g-3">
+                    <input type="hidden" name="csrf_token" value="<?php echo generateCSRFToken(); ?>">
+                    <div class="col-md-6">
+                        <label for="firstname" class="form-label">
+                            <i class="fas fa-user"></i> Nome *
+                        </label>
+                        <input type="text" class="form-control" id="firstname" name="firstname" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="lastname" class="form-label">
+                            <i class="fas fa-user"></i> Cognome *
+                        </label>
+                        <input type="text" class="form-control" id="lastname" name="lastname" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="email" class="form-label">
+                            <i class="fas fa-envelope"></i> Email *
+                        </label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="phone" class="form-label">
+                            <i class="fas fa-phone"></i> Telefono *
+                        </label>
+                        <input type="tel" class="form-control" id="phone" name="phone" required>
+                    </div>
+                    <div class="col-12">
+                        <label for="password" class="form-label">
+                            <i class="fas fa-lock"></i> Password *
+                        </label>
+                        <input type="password" class="form-control" id="password" name="password" required minlength="6">
+                    </div>
+                    <div class="col-12 mt-4">
+                        <button type="submit" name="add_student" class="btn btn-success">
+                            <i class="fas fa-user-plus"></i> Registra Studente
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+            </div>
+        </section>
+    </div>
+
+    <!-- Main Footer -->
+    <footer class="main-footer">
+        <strong>&copy; 2025 <?php echo SITE_NAME; ?>.</strong> All rights reserved.
+    </footer>
+</div>
+
+<!-- REQUIRED SCRIPTS -->
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/js/adminlte.min.js"></script>
+
+</body>
+</html>

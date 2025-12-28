@@ -1,0 +1,152 @@
+/* custom.css - Custom styles for Autoscuola Liana Public Site */
+
+/* ========================================
+   1. VARIABLES
+   ======================================== */
+:root {
+    /* Brand Colors */
+    --green-primary: #138C3A;      /* Primary green from logo */
+    --green-light: #1FB25A;        /* Lighter green variant */
+    --green-dark: #0B5E28;         /* Dark green for depth */
+
+    /* Background Colors */
+    --black-main: #0B0B0B;         /* Main black background - layout pubblico */
+    --gray-dark: #1F1F1F;          /* Dark gray for cards/dashboard */
+    --gray-medium: #3A3A3A;        /* Medium gray for borders/hover */
+    --gray-light: #E5E7EB;         /* Light gray for secondary text */
+
+    /* Text Colors */
+    --text-primary: #FFFFFF;       /* Primary text (white) */
+    --text-secondary: #B5B5B5;     /* Secondary text */
+
+    /* State colors */
+    --success: #1FB25A;            /* Success green */
+    --warning: #F4C430;            /* Warning yellow */
+    --danger: #D62828;             /* Danger red */
+    --info: #2EA8E5;               /* Info blue */
+}
+
+/* ========================================
+   2. BASE
+   ======================================== */
+
+/* Modern typography */
+body {
+    font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--black-main);
+}
+
+/* ========================================
+   3. LAYOUT
+   ======================================== */
+
+/* Enhanced navbar */
+.navbar {
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--green-primary) !important;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    color: #333333 !important;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 0.5rem 1rem;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--green-primary);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--green-primary) !important;
+}
+
+/* Hero sections */
+.hero {
+    background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-primary) 100%),
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-size: cover, 60px 60px;
+    color: white;
+    padding: 100px 0;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.1);
+    pointer-events: none;
+}
+
+/* Cards */
+.card {
+    background: var(--gray-dark);
+    border: 1px solid var(--gray-medium);
+    color: var(--text-primary);
+}
+
+.card-header {
+    background: var(--gray-darker);
+    border-bottom: 1px solid var(--gray-medium);
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--green-primary);
+    border-color: var(--green-primary);
+}
+
+.btn-primary:hover {
+    background-color: var(--green-dark);
+    border-color: var(--green-dark);
+}
+
+/* Forms */
+.form-control {
+    background-color: var(--gray-dark);
+    border: 1px solid var(--gray-medium);
+    color: var(--text-primary);
+}
+
+.form-control:focus {
+    border-color: var(--green-primary);
+    box-shadow: 0 0 0 0.2rem rgba(19, 140, 58, 0.25);
+}
+
+/* Footer */
+footer {
+    background: var(--gray-darker);
+    color: var(--text-secondary);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero {
+        padding: 60px 0;
+    }
+}

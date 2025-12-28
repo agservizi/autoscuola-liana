@@ -1,0 +1,268 @@
+/* Topbar Styles */
+.topbar {
+    height: 60px;
+    background: linear-gradient(135deg, #1FB25A 0%, #138C3A 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1020;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.topbar-left {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.sidebar-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    margin-right: 15px;
+}
+
+.sidebar-toggle:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+.topbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.user-greeting {
+    margin-right: 15px;
+    font-weight: 500;
+}
+
+/* Student Sidebar Styles */
+.student-sidebar {
+    width: 280px;
+    background: linear-gradient(135deg, #1FB25A 0%, #138C3A 100%);
+    color: white;
+    padding: 0;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    height: calc(100vh - 60px);
+    overflow-y: auto;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    transition: width 0.3s ease;
+    z-index: 1000;
+}
+
+.student-sidebar.collapsed {
+    width: 70px;
+}
+
+.sidebar-header {
+    padding: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user-avatar {
+    font-size: 2rem;
+    color: rgba(255,255,255,0.8);
+}
+
+.user-details h6 {
+    margin: 0;
+    font-weight: 600;
+}
+
+.user-role {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-menu li {
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.sidebar-menu li.active a {
+    background-color: rgba(255,255,255,0.1);
+    border-right: 3px solid #fff;
+}
+
+.sidebar-menu a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.sidebar-menu a:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+/* Collapsed sidebar styles */
+.student-sidebar.collapsed .sidebar-header .user-info {
+    display: none;
+}
+
+.student-sidebar.collapsed .sidebar-header .user-avatar {
+    text-align: center;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+.student-sidebar.collapsed .sidebar-header .user-details {
+    display: none;
+}
+
+.student-sidebar.collapsed .sidebar-menu a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 10px;
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+}
+
+.student-sidebar.collapsed .sidebar-menu a:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+.student-sidebar.collapsed .sidebar-menu a span {
+    display: none;
+}
+
+.student-sidebar.collapsed .sidebar-menu a i {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+/* Admin Sidebar Styles */
+.admin-sidebar {
+    width: 280px;
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+    padding: 0;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    height: calc(100vh - 60px);
+    overflow-y: auto;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    transition: width 0.3s ease;
+    z-index: 1000;
+}
+
+.admin-sidebar.collapsed {
+    width: 70px;
+}
+
+.admin-sidebar .sidebar-header h3 {
+    margin: 0;
+    padding: 20px;
+    font-size: 1.2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.admin-sidebar.collapsed .sidebar-header h3 {
+    display: none;
+}
+
+.admin-sidebar.collapsed .sidebar-menu a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 10px;
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+}
+
+.admin-sidebar.collapsed .sidebar-menu a:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+.admin-sidebar.collapsed .sidebar-menu a span {
+    display: none;
+}
+
+.admin-sidebar.collapsed .sidebar-menu a i {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+/* Main Content Styles */
+.student-main, .admin-main {
+    margin-left: 280px;
+    margin-top: 60px;
+    padding: 15px;
+    transition: margin-left 0.3s ease;
+    min-height: calc(100vh - 60px);
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.student-dashboard.sidebar-collapsed .student-main,
+.admin-dashboard.sidebar-collapsed .admin-main {
+    margin-left: 70px !important;
+}
+
+/* Responsive Design */
+@media (max-width: 767.98px) {
+    .student-sidebar, .admin-sidebar {
+        transform: translateX(-100%);
+        z-index: 1050;
+    }
+
+    .student-sidebar:not(.collapsed), .admin-sidebar:not(.collapsed) {
+        transform: translateX(0);
+    }
+
+    .student-main, .admin-main {
+        margin-left: 0 !important;
+    }
+
+    .student-dashboard.sidebar-collapsed .student-main,
+    .admin-dashboard.sidebar-collapsed .admin-main {
+        margin-left: 0 !important;
+    }
+
+    /* Overlay for mobile - deve restare commentato per evitare overlay nero */
+    /*
+    .student-dashboard:not(.sidebar-collapsed) .student-main::before,
+    .admin-dashboard:not(.sidebar-collapsed) .admin-main::before {
+        content: '';
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.5);
+        z-index: 1040;
+        display: block;
+    }
+    */
+}

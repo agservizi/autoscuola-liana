@@ -1,0 +1,674 @@
+<?php
+$page_title = 'Orari & Sede';
+require_once '../includes/config.php';
+require_once '../includes/auth.php';
+require_once '../includes/header.php';
+?>
+
+<!-- Ultra Modern Location & Hours Hero -->
+<section class="location-hero">
+    <div class="hero-background">
+        <div class="hero-gradient"></div>
+        <div class="hero-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-icon">
+                <i class="fas fa-map-marked-alt"></i>
+            </div>
+            <h1 class="hero-title">Orari & <span class="highlight">Sede</span></h1>
+            <p class="hero-subtitle">Trova la nostra sede e scopri i nostri orari di apertura per iniziare il tuo percorso verso la patente</p>
+
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Anni di esperienza</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Supporto emergenza</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Soddisfazione clienti</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Main Content -->
+<section class="location-content">
+    <div class="container">
+        <div class="location-grid">
+            <!-- Contact Information -->
+            <div class="contact-info-card">
+                <div class="card-header">
+                    <h2><i class="fas fa-map-marker-alt"></i> La nostra sede</h2>
+                </div>
+                <div class="card-body">
+                    <div class="contact-details">
+                        <div class="detail-item">
+                            <div class="detail-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <div class="detail-content">
+                                <h4><?php echo SITE_NAME; ?></h4>
+                                <p>Scuola Guida Professionale</p>
+                            </div>
+                        </div>
+
+                        <div class="detail-item">
+                            <div class="detail-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="detail-content">
+                                <h4>Indirizzo</h4>
+                                <p>Via Roma, 123<br>00100 Roma (RM)<br>Italia</p>
+                            </div>
+                        </div>
+
+                        <div class="detail-item">
+                            <div class="detail-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="detail-content">
+                                <h4>Telefono</h4>
+                                <p>+39 06 12345678</p>
+                            </div>
+                        </div>
+
+                        <div class="detail-item">
+                            <div class="detail-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="detail-content">
+                                <h4>Email</h4>
+                                <p>info@autoscuolaliana.it</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hours Information -->
+            <div class="hours-card">
+                <div class="card-header">
+                    <h2><i class="fas fa-clock"></i> Orari di apertura</h2>
+                </div>
+                <div class="card-body">
+                    <div class="hours-grid">
+                        <div class="hours-section">
+                            <h4>Ufficio amministrativo</h4>
+                            <div class="hours-list">
+                                <div class="hours-item">
+                                    <span class="day">Lunedì - Venerdì</span>
+                                    <span class="time">8:00 - 20:00</span>
+                                </div>
+                                <div class="hours-item">
+                                    <span class="day">Sabato</span>
+                                    <span class="time">8:00 - 18:00</span>
+                                </div>
+                                <div class="hours-item closed">
+                                    <span class="day">Domenica</span>
+                                    <span class="time">Chiuso</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="hours-section">
+                            <h4>Lezioni teoriche</h4>
+                            <div class="hours-list">
+                                <div class="hours-item">
+                                    <span class="day">Mattina</span>
+                                    <span class="time">9:00 - 13:00</span>
+                                </div>
+                                <div class="hours-item">
+                                    <span class="day">Pomeriggio</span>
+                                    <span class="time">14:00 - 18:00</span>
+                                </div>
+                                <div class="hours-item">
+                                    <span class="day">Serale</span>
+                                    <span class="time">19:00 - 21:00</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="hours-section">
+                            <h4>Guide pratiche</h4>
+                            <div class="hours-notice">
+                                <i class="fas fa-calendar-check"></i>
+                                <p>Su appuntamento dal lunedì al sabato</p>
+                                <small>Contattaci per prenotare la tua lezione</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Directions -->
+        <div class="directions-card">
+            <div class="card-header">
+                <h2><i class="fas fa-route"></i> Come raggiungerci</h2>
+            </div>
+            <div class="card-body">
+                <div class="directions-grid">
+                    <div class="direction-item">
+                        <div class="direction-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <div class="direction-content">
+                            <h4>In auto</h4>
+                            <p>Parcheggio gratuito disponibile direttamente di fronte alla sede. Segui le indicazioni per "Autoscuola Liana" nel centro di Roma.</p>
+                        </div>
+                    </div>
+
+                    <div class="direction-item">
+                        <div class="direction-icon">
+                            <i class="fas fa-bus"></i>
+                        </div>
+                        <div class="direction-content">
+                            <h4>In autobus</h4>
+                            <p>Linee 1, 2, 3 - Fermata "Autoscuola Liana". La fermata è a soli 50 metri dalla nostra sede.</p>
+                        </div>
+                    </div>
+
+                    <div class="direction-item">
+                        <div class="direction-icon">
+                            <i class="fas fa-subway"></i>
+                        </div>
+                        <div class="direction-content">
+                            <h4>In metro</h4>
+                            <p>Stazione "Roma Centro" (Linea A). Dalla stazione, prosegui a piedi per circa 5 minuti seguendo Via Roma.</p>
+                        </div>
+                    </div>
+
+                    <div class="direction-item">
+                        <div class="direction-icon">
+                            <i class="fas fa-bicycle"></i>
+                        </div>
+                        <div class="direction-content">
+                            <h4>In bicicletta</h4>
+                            <p>Racks per biciclette disponibili all'ingresso. La sede è facilmente raggiungibile dal centro storico.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Map Section -->
+        <div class="map-card">
+            <div class="card-header">
+                <h2><i class="fas fa-map"></i> Trova la nostra sede</h2>
+            </div>
+            <div class="card-body">
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2970.123456789012!2d12.496365!3d41.902783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f6196f9928ebb%3A0xb90f770693656e38!2sRoma%2C%20RM!5e0!3m2!1sit!2sit!4v1697123456789!5m2!1sit!2sit"
+                        width="100%"
+                        height="400"
+                        style="border:0; border-radius: 12px;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <div class="map-info">
+                    <div class="info-item">
+                        <i class="fas fa-parking"></i>
+                        <span>Parcheggio gratuito disponibile</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-wheelchair"></i>
+                        <span>Accessibile ai disabili</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-wifi"></i>
+                        <span>Wi-Fi gratuito</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Emergency Contact -->
+        <div class="emergency-card">
+            <div class="emergency-content">
+                <div class="emergency-icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <div class="emergency-text">
+                    <h3>Contatto di emergenza</h3>
+                    <p>In caso di problemi durante le lezioni pratiche o emergenze, contattaci immediatamente:</p>
+                    <div class="emergency-contact">
+                        <a href="tel:+390612345678" class="emergency-phone">
+                            <i class="fas fa-phone"></i>
+                            +39 06 12345678
+                        </a>
+                        <span class="emergency-note">Disponibile 24/7 per emergenze</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="location-cta">
+    <div class="container">
+        <div class="cta-content">
+            <h2>Pronto per iniziare?</h2>
+            <p>Vieni a trovarci in sede per una consulenza gratuita e scopri il nostro metodo di insegnamento.</p>
+            <div class="cta-buttons">
+                <a href="contatti.php" class="btn btn-primary btn-lg">
+                    <i class="fas fa-calendar-check"></i> Prenota appuntamento
+                </a>
+                <a href="tel:+390612345678" class="btn btn-outline-light btn-lg">
+                    <i class="fas fa-phone"></i> Chiama ora
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+/* Location Page Styles */
+.location-hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.location-hero .hero-content {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.location-hero .hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.location-hero .hero-subtitle {
+    font-size: 1.3rem;
+    opacity: 0.9;
+    margin-bottom: 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('assets/img/road-pattern.png') repeat, rgba(0,0,0,0.3);
+    z-index: 1;
+}
+
+/* Main Content */
+.location-content {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.location-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+/* Cards */
+.contact-info-card,
+.hours-card,
+.directions-card,
+.map-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+.card-header {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    color: white;
+    padding: 25px 30px;
+}
+
+.card-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card-body {
+    padding: 30px;
+}
+
+/* Contact Details */
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.detail-icon {
+    width: 50px;
+    height: 50px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #3498db;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.detail-content h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.detail-content p {
+    color: #5a6c7d;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Hours */
+.hours-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+}
+
+.hours-section h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.hours-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.hours-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #f8f9fa;
+}
+
+.hours-item.closed .time {
+    color: #e74c3c;
+    font-weight: 600;
+}
+
+.day {
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+.time {
+    color: #3498db;
+    font-weight: 600;
+}
+
+.hours-notice {
+    text-align: center;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.hours-notice i {
+    font-size: 2rem;
+    color: #3498db;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.hours-notice p {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.hours-notice small {
+    color: #6c757d;
+}
+
+/* Directions */
+.directions-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.direction-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.direction-item:hover {
+    background: #e9ecef;
+    transform: translateY(-2px);
+}
+
+.direction-icon {
+    width: 40px;
+    height: 40px;
+    background: #3498db;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.direction-content h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.direction-content p {
+    color: #5a6c7d;
+    line-height: 1.4;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Map */
+.map-container {
+    margin-bottom: 20px;
+}
+
+.map-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+.info-item i {
+    color: #27ae60;
+}
+
+/* Emergency Contact */
+.emergency-card {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 30px;
+    margin: 40px 0;
+}
+
+.emergency-content {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.emergency-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.emergency-text h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.emergency-text p {
+    opacity: 0.9;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.emergency-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.emergency-phone {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.emergency-phone:hover {
+    opacity: 0.8;
+}
+
+.emergency-note {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* CTA Section */
+.location-cta {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.location-cta .cta-content h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.location-cta .cta-content p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.location-cta .cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .location-hero .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .location-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .hours-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .directions-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .emergency-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .map-info {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+}
+</style>
+
+<?php require_once '../includes/footer.php'; ?>
