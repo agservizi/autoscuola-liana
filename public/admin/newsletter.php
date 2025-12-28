@@ -96,7 +96,7 @@ $totalNewsletters = $db->query("SELECT COUNT(*) FROM newsletters")->fetchColumn(
 $totalCampaigns = $db->query("SELECT COUNT(*) FROM newsletter_campaigns WHERE status = 'sent'")->fetchColumn();
 
 $pageTitle = 'Gestione Newsletter';
-include '../includes/header_dashboard.php';
+include '../../includes/header_dashboard.php';
 ?>
 
 <div class="content-wrapper">
@@ -172,7 +172,7 @@ include '../includes/header_dashboard.php';
                 <div class="col-lg-3 col-6">
                     <div class="small-box bg-danger">
                         <div class="inner">
-                            <h3><?php echo $db->query("SELECT COUNT(*) FROM newsletter_subscribers WHERE status = 'unsubscribed'")->fetchColumn(); ?></h3>
+                            <h3><?php echo $db->query("SELECT COUNT(*) FROM newsletter_subscribers WHERE unsubscribed_at IS NOT NULL")->fetchColumn(); ?></h3>
                             <p>Disiscritti</p>
                         </div>
                         <div class="icon">
@@ -259,4 +259,4 @@ include '../includes/header_dashboard.php';
     </section>
 </div>
 
-<?php include '../includes/footer.php'; ?>
+<?php include '../../includes/footer.php'; ?>
