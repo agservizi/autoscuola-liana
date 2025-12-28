@@ -1,8 +1,8 @@
 <?php
 session_start();
-require_once '../includes/auth.php';
-require_once '../includes/db.php';
-require_once '../includes/config.php';
+require_once '../../includes/auth.php';
+require_once '../../includes/db.php';
+require_once '../../includes/config.php';
 
 // Verifica che l'utente sia admin
 if (!isAdmin()) {
@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         $subscribers = $stmt->fetchAll(PDO::FETCH_COLUMN);
 
                         if (!empty($subscribers)) {
-                            require_once '../includes/EmailService.php';
+                            require_once '../../includes/EmailService.php';
                             $emailService = new EmailService();
 
                             $sentCount = 0;
