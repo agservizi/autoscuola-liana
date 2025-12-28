@@ -23,8 +23,38 @@ $totalRecipients = array_sum(array_column($campaigns, 'recipient_count'));
 $successfulCampaigns = count(array_filter($campaigns, function($c) { return $c['status'] === 'sent'; }));
 
 $pageTitle = 'Campagne Newsletter';
-include '../includes/header_dashboard.php';
+$current_page = basename(__FILE__);
+include '../../includes/header_dashboard.php';
 ?>
+
+<div class="wrapper">
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+        <!-- Left navbar links -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="dashboard.php" class="nav-link">Home</a>
+            </li>
+        </ul>
+
+        <!-- Right navbar links -->
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <span class="nav-link">Benvenuto, <?php echo htmlspecialchars($_SESSION['first_name']); ?>!</span>
+            </li>
+            <li class="nav-item">
+                <a href="../logout.php" class="nav-link">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Sidebar -->
+    <?php include '../../includes/sidebar_admin.php'; ?>
 
 <div class="content-wrapper">
     <section class="content-header">
@@ -132,5 +162,15 @@ include '../includes/header_dashboard.php';
         </div>
     </section>
 </div>
+</div>
 
-<?php include '../includes/footer.php'; ?>
+<!-- Main Footer -->
+    <footer class="main-footer">
+        <strong>&copy; 2025 <?php echo SITE_NAME; ?>.</strong> All rights reserved.
+    </footer>
+
+</div>
+<!-- ./wrapper -->
+
+</body>
+</html>

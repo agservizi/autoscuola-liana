@@ -38,8 +38,38 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 $pageTitle = 'Crea Newsletter';
-include '../includes/header_dashboard.php';
+$current_page = basename(__FILE__);
+include '../../includes/header_dashboard.php';
 ?>
+
+<div class="wrapper">
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+        <!-- Left navbar links -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="dashboard.php" class="nav-link">Home</a>
+            </li>
+        </ul>
+
+        <!-- Right navbar links -->
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <span class="nav-link">Benvenuto, <?php echo htmlspecialchars($_SESSION['first_name']); ?>!</span>
+            </li>
+            <li class="nav-item">
+                <a href="../logout.php" class="nav-link">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Sidebar -->
+    <?php include '../../includes/sidebar_admin.php'; ?>
 
 <div class="content-wrapper">
     <section class="content-header">
@@ -109,53 +139,9 @@ include '../includes/header_dashboard.php';
                     </div>
                 </form>
             </div>
-
-            <!-- Template di esempio -->
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="card-title">Template di Esempio</h3>
-                </div>
-                <div class="card-body">
-                    <p>Ecco un template HTML di esempio che puoi copiare e modificare:</p>
-                    <div class="bg-light p-3 rounded">
-                        <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;meta charset="utf-8"&gt;
-    &lt;title&gt;Newsletter Autoscuola Liana&lt;/title&gt;
-&lt;/head&gt;
-&lt;body style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;"&gt;
-    &lt;div style="background-color: #28a745; color: white; padding: 20px; text-align: center;"&gt;
-        &lt;h1&gt;Autoscuola Liana&lt;/h1&gt;
-        &lt;p&gt;La tua scuola guida di fiducia a Castellammare di Stabia&lt;/p&gt;
-    &lt;/div&gt;
-
-    &lt;div style="padding: 20px;"&gt;
-        &lt;h2&gt;Titolo del Newsletter&lt;/h2&gt;
-        &lt;p&gt;Contenuto del newsletter...&lt;/p&gt;
-
-        &lt;div style="background-color: #f8f9fa; padding: 15px; margin: 20px 0; border-left: 4px solid #28a745;"&gt;
-            &lt;h3&gt;Novità e Offerte&lt;/h3&gt;
-            &lt;p&gt;Dettagli delle novità...&lt;/p&gt;
-        &lt;/div&gt;
-
-        &lt;a href="https://autoscuolaliana.it" style="background-color: #28a745; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;"&gt;
-            Visita il nostro sito
-        &lt;/a&gt;
-    &lt;/div&gt;
-
-    &lt;div style="background-color: #f8f9fa; padding: 20px; text-align: center; font-size: 12px; color: #666;"&gt;
-        &lt;p&gt;Autoscuola Liana - Via Roma, 123 - 80053 Castellammare di Stabia (NA)&lt;/p&gt;
-        &lt;p&gt;Tel: 081 123 4567 | Email: info@autoscuolaliana.it&lt;/p&gt;
-        &lt;p&gt;&lt;a href="[UNSUBSCRIBE_URL]"&gt;Clicca qui per disiscriverti&lt;/a&gt;&lt;/p&gt;
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
+</div>
 </div>
 
 <script>
@@ -165,4 +151,13 @@ $(document).ready(function() {
 });
 </script>
 
-<?php include '../includes/footer.php'; ?>
+<!-- Main Footer -->
+    <footer class="main-footer">
+        <strong>&copy; 2025 <?php echo SITE_NAME; ?>.</strong> All rights reserved.
+    </footer>
+
+</div>
+<!-- ./wrapper -->
+
+</body>
+</html>

@@ -304,5 +304,9 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
+
+</div>
+<!-- ./wrapper -->
+
 </body>
 </html>
