@@ -81,15 +81,15 @@ require_once '../includes/header.php';
 
         <div class="hero-visual">
             <div class="floating-card card-1">
-                <img src="/assets/img/auto-license.jpg" alt="Patente Auto" style="width: 100%; height: 120px; object-fit: cover; border-radius: 10px; margin-bottom: 10px;">
+                <img src="assets/img/auto-license.jpg" alt="Patente Auto" style="width: 100%; height: 120px; object-fit: cover; border-radius: 10px; margin-bottom: 10px;">
                 <span>Patente Auto</span>
             </div>
             <div class="floating-card card-2">
-                <img src="/assets/img/moto-license.jpg" alt="Patente Moto" style="width: 100%; height: 120px; object-fit: cover; border-radius: 10px; margin-bottom: 10px;">
+                <img src="assets/img/moto-license.jpg" alt="Patente Moto" style="width: 100%; height: 120px; object-fit: cover; border-radius: 10px; margin-bottom: 10px;">
                 <span>Patente Moto</span>
             </div>
             <div class="floating-card card-3">
-                <img src="/assets/img/boat-license.jpg" alt="Patente Nautica" style="width: 100%; height: 120px; object-fit: cover; border-radius: 10px; margin-bottom: 10px;">
+                <img src="assets/img/boat-license.jpg" alt="Patente Nautica" style="width: 100%; height: 120px; object-fit: cover; border-radius: 10px; margin-bottom: 10px;">
                 <span>Patente Nautica</span>
             </div>
         </div>

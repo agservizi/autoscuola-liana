@@ -154,7 +154,7 @@ require_once '../../includes/header_dashboard.php';
 <!-- AdminLTE App -->
 <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/js/adminlte.min.js"></script>
 <!-- Main JS -->
-<script src="/assets/js/main.js"></script>
+<script src="assets/js/main.js"></script>
 
 <script>
 let quizId = <?php echo $quiz_id; ?>;
