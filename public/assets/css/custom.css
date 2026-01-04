@@ -121,25 +121,26 @@ body.nav-open {
     visibility: visible;
 }
 
-/* Mobile nav panel: slide-down overlay without pushing content */
+/* Mobile nav panel: full-screen fade/scale */
 @media (max-width: 991.98px) {
     .navbar-collapse {
         position: fixed;
-        top: var(--nav-height);
-        left: 0;
-        right: 0;
-        bottom: 0;
+        inset: 0;
         background: #ffffff;
-        padding: 1.25rem 1.5rem 2rem;
+        padding: calc(var(--nav-height) + 1.25rem) 1.5rem 2rem;
         overflow-y: auto;
-        transform: translateY(-110%);
-        transition: transform 0.25s ease;
+        opacity: 0;
+        transform: scale(0.98);
+        transition: opacity 0.2s ease, transform 0.2s ease;
         box-shadow: 0 12px 40px rgba(0,0,0,0.18);
         z-index: 1030;
+        pointer-events: none;
     }
 
     .navbar-collapse.show {
-        transform: translateY(0);
+        opacity: 1;
+        transform: scale(1);
+        pointer-events: auto;
     }
 
     .navbar-nav {
