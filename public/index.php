@@ -555,6 +555,14 @@ require_once '../includes/header.php';
     }
 }
 
+@media (max-width: 1200px) {
+    .scroll-indicator {
+        position: static;
+        transform: none;
+        margin-top: 20px;
+    }
+}
+
 .scroll-mouse {
     width: 24px;
     height: 36px;
