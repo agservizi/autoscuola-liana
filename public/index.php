@@ -545,6 +545,16 @@ require_once '../includes/header.php';
     animation: fadeIn 1s ease-out 2s both;
 }
 
+@media (max-width: 768px) {
+    .scroll-indicator {
+        display: none;
+    }
+
+    .btn-scroll {
+        animation: none;
+    }
+}
+
 .scroll-mouse {
     width: 24px;
     height: 36px;
