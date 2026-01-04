@@ -160,8 +160,9 @@ require_once '../includes/header.php';
                     <?php else: ?>
                         <a href="login.php" class="btn btn-primary">
                             <i class="bi bi-box-arrow-in-right"></i>
-                            Accedi per Iscriverti
+                            Accedi con Credenziali Fornite
                         </a>
+                        <small class="text-muted d-block mt-2">Le credenziali sono rilasciate dalla segreteria al momento dell'iscrizione.</small>
                     <?php endif; ?>
                     <button class="btn btn-outline-primary course-info-btn" data-course-id="<?php echo $course['id']; ?>">
                         <i class="bi bi-info-circle"></i>
