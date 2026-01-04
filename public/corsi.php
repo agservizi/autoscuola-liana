@@ -375,7 +375,7 @@ require_once '../includes/header.php';
 
 .courses-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 30px;
 }
 
@@ -493,6 +493,12 @@ require_once '../includes/header.php';
     gap: 8px;
     font-size: 0.9rem;
     color: #5a6c7d;
+}
+
+@media (max-width: 576px) {
+    .course-features {
+        grid-template-columns: 1fr;
+    }
 }
 
 .feature-item i {
