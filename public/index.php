@@ -130,6 +130,15 @@ require_once '../includes/header.php';
                 <p>Lezioni 24/7, weekend, serali. Adattiamo gli orari alla tua vita.</p>
                 <div class="feature-highlight">Sempre Disponibili</div>
             </div>
+
+            <div class="feature-card premium">
+                <div class="feature-icon">
+                    <i class="bi bi-laptop"></i>
+                </div>
+                <h3>Area Studenti</h3>
+                <p>Lezioni online con quiz collegati alle unità didattiche per consolidare ogni modulo.</p>
+                <div class="feature-highlight">Studio + Quiz</div>
+            </div>
         </div>
     </div>
 </section>
