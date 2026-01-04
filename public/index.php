@@ -115,15 +115,6 @@ require_once '../includes/header.php';
         <div class="features-grid">
             <div class="feature-card premium">
                 <div class="feature-icon">
-                    <i class="bi bi-cpu"></i>
-                </div>
-                <h3>Simulatore Avanzato</h3>
-                <p>Allena le tue abilità in un ambiente virtuale sicuro prima di toccare il volante reale.</p>
-                <div class="feature-highlight">Tecnologia VR</div>
-            </div>
-
-            <div class="feature-card premium">
-                <div class="feature-icon">
                     <i class="bi bi-shield-check"></i>
                 </div>
                 <h3>Sicurezza Prioritaria</h3>
@@ -138,33 +129,6 @@ require_once '../includes/header.php';
                 <h3>Flessibilità Totale</h3>
                 <p>Lezioni 24/7, weekend, serali. Adattiamo gli orari alla tua vita.</p>
                 <div class="feature-highlight">Sempre Disponibili</div>
-            </div>
-
-            <div class="feature-card premium">
-                <div class="feature-icon">
-                    <i class="bi bi-award"></i>
-                </div>
-                <h3>Certificazioni</h3>
-                <p>Riconoscimenti ufficiali e partnership con le principali case automobilistiche.</p>
-                <div class="feature-highlight">Certificato ISO</div>
-            </div>
-
-            <div class="feature-card premium">
-                <div class="feature-icon">
-                    <i class="bi bi-people"></i>
-                </div>
-                <h3>Community</h3>
-                <p>Unisciti a una community di oltre 2000 conducenti soddisfatti.</p>
-                <div class="feature-highlight">Network Attivo</div>
-            </div>
-
-            <div class="feature-card premium">
-                <div class="feature-icon">
-                    <i class="bi bi-rocket"></i>
-                </div>
-                <h3>Carriera</h3>
-                <p>Opportunità di lavoro nel settore automotive e trasporti.</p>
-                <div class="feature-highlight">Placement 85%</div>
             </div>
         </div>
     </div>
@@ -638,8 +602,11 @@ require_once '../includes/header.php';
 
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 360px));
     gap: 30px;
+    justify-content: center;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .feature-card {
