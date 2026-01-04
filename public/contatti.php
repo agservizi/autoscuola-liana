@@ -1182,6 +1182,15 @@ require_once '../includes/header.php';
     }
 }
 
+.contacts-hero .stat-number,
+.contacts-hero .stat-label {
+    color: #fff;
+}
+
+.contacts-hero .stat-label {
+    opacity: 0.9;
+}
+
 @media (max-width: 480px) {
     .contacts-hero {
         min-height: 60vh;

@@ -715,6 +715,15 @@ require_once '../includes/header.php';
     }
 }
 
+.courses-hero .stat-number,
+.courses-hero .stat-label {
+    color: #fff;
+}
+
+.courses-hero .stat-label {
+    opacity: 0.9;
+}
+
 /* Animations */
 @keyframes slideInUp {
     from { transform: translateY(30px); opacity: 0; }

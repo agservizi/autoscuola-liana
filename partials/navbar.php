@@ -12,7 +12,6 @@
                 <span class="toggler-bar middle"></span>
                 <span class="toggler-bar bottom"></span>
             </span>
-            <span class="toggler-label">Menu</span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarNav">

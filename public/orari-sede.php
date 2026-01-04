@@ -491,14 +491,15 @@ require_once '../includes/header.php';
 .stat-number {
     font-size: 2.5rem;
     font-weight: 800;
-    color: #ffd700;
+    color: #fff;
     margin-bottom: 0.5rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .stat-label {
     font-size: 0.9rem;
-    opacity: 0.8;
+    opacity: 0.9;
+    color: #fff;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;

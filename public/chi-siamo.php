@@ -1045,6 +1045,15 @@ require_once '../includes/header.php';
     flex-wrap: wrap;
 }
 
+.about-hero .stat-number,
+.about-hero .stat-label {
+    color: #fff;
+}
+
+.about-hero .stat-label {
+    opacity: 0.9;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .story-grid,

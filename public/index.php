@@ -449,13 +449,14 @@ require_once '../includes/header.php';
 .stat-number {
     font-size: 2rem;
     font-weight: 700;
-    color: #ffd700;
+    color: #fff;
     display: block;
 }
 
 .stat-label {
     font-size: 0.9rem;
-    opacity: 0.8;
+    opacity: 0.9;
+    color: #fff;
 }
 
 .hero-cta {
