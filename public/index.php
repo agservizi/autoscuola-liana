@@ -611,10 +611,11 @@ require_once '../includes/header.php';
 
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 360px));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 30px;
-    justify-content: center;
-    max-width: 800px;
+    justify-items: stretch;
+    align-items: stretch;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
