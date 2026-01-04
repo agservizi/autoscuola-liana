@@ -100,8 +100,13 @@
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
             <a class="navbar-brand" href="<?php echo SITE_URL; ?>/index.php"><?php echo SITE_NAME; ?></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
+            <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Apri il menu">
+                <span class="toggler-box" aria-hidden="true">
+                    <span class="toggler-bar top"></span>
+                    <span class="toggler-bar middle"></span>
+                    <span class="toggler-bar bottom"></span>
+                </span>
+                <span class="toggler-label">Menu</span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
@@ -144,4 +149,5 @@
             </div>
         </div>
     </nav>
+    <div class="mobile-nav-overlay" data-target="#navbarNav"></div>
     <main>

@@ -79,6 +79,33 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // Mobile navbar: animate hamburger, lock scroll, overlay tap-to-close
+    document.querySelectorAll('.navbar-collapse').forEach(collapseEl => {
+        const targetId = `#${collapseEl.id}`;
+        const toggler = document.querySelector(`[data-bs-target="${targetId}"]`);
+        const overlay = document.querySelector(`.mobile-nav-overlay[data-target="${targetId}"]`);
+        if (!toggler) return;
+
+        collapseEl.addEventListener('show.bs.collapse', () => {
+            document.body.classList.add('nav-open');
+            toggler.classList.add('is-open');
+            if (overlay) overlay.classList.add('show');
+        });
+
+        collapseEl.addEventListener('hidden.bs.collapse', () => {
+            document.body.classList.remove('nav-open');
+            toggler.classList.remove('is-open');
+            if (overlay) overlay.classList.remove('show');
+        });
+
+        if (overlay) {
+            overlay.addEventListener('click', () => {
+                const instance = bootstrap.Collapse.getOrCreateInstance(collapseEl);
+                instance.hide();
+            });
+        }
+    });
 });
 // main.js - Main JavaScript file
 

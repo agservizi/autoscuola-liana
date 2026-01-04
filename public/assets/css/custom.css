@@ -38,6 +38,10 @@ body {
     background-color: var(--black-main);
 }
 
+body.nav-open {
+    overflow: hidden;
+}
+
 /* ========================================
    3. LAYOUT
    ======================================== */
@@ -46,6 +50,71 @@ body {
 .navbar {
     background: white;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-toggler {
+    border: none;
+    padding: 0.35rem 0.6rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.custom-toggler .toggler-box {
+    width: 26px;
+    height: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.custom-toggler .toggler-bar {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #1B1B1B;
+    border-radius: 999px;
+    transition: transform 0.25s ease, opacity 0.2s ease, top 0.25s ease, bottom 0.25s ease;
+}
+
+.custom-toggler .toggler-bar.top { top: 0; }
+.custom-toggler .toggler-bar.middle { top: 9px; }
+.custom-toggler .toggler-bar.bottom { bottom: 0; }
+
+.custom-toggler .toggler-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #1B1B1B;
+}
+
+.custom-toggler.is-open .toggler-bar.top {
+    top: 9px;
+    transform: rotate(45deg);
+}
+
+.custom-toggler.is-open .toggler-bar.middle {
+    opacity: 0;
+}
+
+.custom-toggler.is-open .toggler-bar.bottom {
+    bottom: 9px;
+    transform: rotate(-45deg);
+}
+
+.mobile-nav-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(2px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease;
+    z-index: 1020;
+}
+
+.mobile-nav-overlay.show {
+    opacity: 1;
+    visibility: visible;
 }
 
 .navbar-brand {
