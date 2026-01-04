@@ -24,6 +24,9 @@
     --warning: #F4C430;            /* Warning yellow */
     --danger: #D62828;             /* Danger red */
     --info: #2EA8E5;               /* Info blue */
+
+    /* Layout */
+    --nav-height: 72px;
 }
 
 /* ========================================
@@ -50,6 +53,8 @@ body.nav-open {
 .navbar {
     background: white;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    min-height: var(--nav-height);
+    z-index: 1040;
 }
 
 .navbar-toggler {
@@ -104,8 +109,7 @@ body.nav-open {
 .mobile-nav-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.45);
-    backdrop-filter: blur(2px);
+    background: rgba(0,0,0,0.55);
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.2s ease;
@@ -115,6 +119,42 @@ body.nav-open {
 .mobile-nav-overlay.show {
     opacity: 1;
     visibility: visible;
+}
+
+/* Mobile nav panel: slide-down overlay without pushing content */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        position: fixed;
+        top: var(--nav-height);
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #ffffff;
+        padding: 1.25rem 1.5rem 2rem;
+        overflow-y: auto;
+        transform: translateY(-110%);
+        transition: transform 0.25s ease;
+        box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+        z-index: 1030;
+    }
+
+    .navbar-collapse.show {
+        transform: translateY(0);
+    }
+
+    .navbar-nav {
+        align-items: flex-start;
+        gap: 0;
+    }
+
+    .navbar-nav.me-auto {
+        margin-bottom: 1rem;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 1.1rem;
+        padding: 0.75rem 0;
+    }
 }
 
 .navbar-brand {
